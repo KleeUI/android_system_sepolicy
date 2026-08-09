@@ -650,7 +650,12 @@ allow init self:global_capability_class_set sys_boot;
 # Init will create /data/misc/logd when the property persist.logd.logpersistd is "logcatd".
 # Init will also walk through the directory as part of a recursive restorecon.
 allow init misc_logd_file:dir { add_name open create read getattr setattr search write };
-allow init misc_logd_file:file { open create getattr setattr write };
+allow init misc_logd_file:file { open create getattr read setattr write };
+
+# Temporary v26 early-boot diagnostics.  Init snapshots crash artifacts into
+# pre-created metadata_bootstat files when composer exits before ADB is ready.
+allow init tombstone_data_file:dir r_dir_perms;
+allow init tombstone_data_file:file r_file_perms;
 
 # Support "adb shell stop"
 allow init self:global_capability_class_set kill;
