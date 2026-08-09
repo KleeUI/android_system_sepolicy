@@ -802,7 +802,7 @@ allow init vendor_shell_exec:file execute;
 allow init vold_metadata_file:dir create_dir_perms;
 allow init vold_metadata_file:file getattr;
 allow init metadata_bootstat_file:dir create_dir_perms;
-allow init metadata_bootstat_file:file w_file_perms;
+allow init metadata_bootstat_file:file create_file_perms;
 allow init userspace_reboot_metadata_file:file w_file_perms;
 
 # Allow init to touch PSI monitors
