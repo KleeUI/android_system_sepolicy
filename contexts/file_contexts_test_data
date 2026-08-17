@@ -46,10 +46,13 @@
 /apex/apex-info-list.xml                                          apex_info_file
 
 /bin                                                              rootfs
+/bt_firmware                                                      rootfs
 /bugreports                                                       rootfs
 /charger                                                          rootfs
 /d                                                                rootfs
+/dsp                                                              rootfs
 /etc                                                              rootfs
+/firmware                                                         rootfs
 /sdcard                                                           rootfs
 
 /vendor_file_contexts                                             file_contexts_file
